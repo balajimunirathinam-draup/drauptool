@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draup Tools</title>
+  <link rel="shortcut icon" href="/img/favicon-96.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      animation: spin 2s linear infinite;
+    }
+    .loader img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .content {
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    /* Your existing CSS code here */
+  </style>
+</head>
+<body>
+<div class="loader-container">
+  <div class="loader">
+    <img src="/img/favicon-96.png" alt="Loading...">
+  </div>
+</div>
+
+<div class="content">
+  <!-- Your existing HTML content goes here -->
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const loaderContainer = document.querySelector('.loader-container');
+  const content = document.querySelector('.content');
+  
+  // Simulate loading time
+  setTimeout(() => {
+    loaderContainer.style.opacity = '0';
+    content.style.opacity = '1';
+    setTimeout(() => {
+      loaderContainer.style.display = 'none';
+    }, 500);
+  }, 1000); // Adjust this time according to your needs
+  
+  // Your existing JavaScript code here
+});
+</script>
+</body>
+</html>

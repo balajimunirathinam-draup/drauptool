@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business Intention Tool</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsify-sidebarfooter/5.0.6/docsify-sidebar.min.js">
+  <script src="script.js"></script>
+  <link rel="shortcut icon" href="/img/favicon-96.png">
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .search-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search-bar input[type="text"],
+    .search-bar input[type="date"] {
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      max-width: 300px;
+    }
+    .search-bar button {
+      display: block;
+      margin: 0 auto;
+      padding: 5px 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-results {
+      text-align: center;
+    }
+    .search-result {
+      margin-bottom: 10px;
+    }
+    .search-result a {
+      color: blue;
+    }
+    .keywords { color: gray;
+      font-size: 12px;
+     }
+     /*Google Ads Code Right and Left sidebar*/
+  .google-ads-bar {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .google-ads {
+    margin-bottom: 20px;
+  }
+  .google-ads img {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    margin-left: 200px; /* Adjust this value to avoid overlapping with the left ads */
+    margin-right: 200px; /* Adjust this value to avoid overlapping with the right ads */
+    padding: 20px;
+  }
+  .google-ads-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .google-ads-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+      
+  </style>
+
+
+
+<body>
+  <div class="nav-menu">
+    <a href="/index.html" class="logo-link"><img src="/img/draup-logo.svg" alt="Logo" class="nav-logo">Tools</a>
+  </div>
+</div>
+<div class="google-ads-left">
+  <div class="google-ads">
+    <!-- Google Ads content (left) here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517786470194208"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads scroll -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3517786470194208"
+     data-ad-slot="4299917365"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</div>
+<div class="google-ads-right">
+  <div class="google-ads">
+    <!-- Google Ads content (right) here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517786470194208"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads scroll -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3517786470194208"
+     data-ad-slot="4299917365"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</div>
+    <!-- Source code -->
+    <div class="container">
+        <div class="search-bar">
+            <p><b>Usecase Search Tool</b></p>
+          <input type="text" id="name" value="" placeholder="Company Name">
+          <input type="date" id="start-date" value="2020-01-01">
+          <input type="date" id="end-date">
+          <button type="button" onclick="addNames()">Search</button>
+          <button type="button" onclick="clearInput()" class="clear-button">Clear</button>
+        </div> <div class="search-results" id="result"></div>
+      </div>
+
+      <script>
+        function formatDate(date) {
+          var month = date.getMonth() + 1;
+          var day = date.getDate();
+          var year = date.getFullYear();
+          return padNumber(month) + "-" + padNumber(day) + "-" + year;
+        }
+    
+        function addNames() {
+          var name = document.getElementById("name").value;
+          var result = "";
+          var words = [
+          "carbon emission+Artificial Intelligence",
+          "carbon emission+Machine Learning",
+          "carbon emission+Robot",
+          "carbon emission+Robotics",
+          "carbon emission+Digital",
+          "carbon emission+Blockchain",
+          "carbon emission+Augmented Reality",
+          "carbon emission+Virtual Reality",
+          "carbon emission+Cybersecurity",
+          "carbon emission+Cloud",
+          "carbon emission+Virtual Twin",
+          "carbon emission+Digital Initiative",
+          "climate change+Artificial Intelligence",
+          "climate change+Machine Learning",
+          "climate change+Robot",
+          "climate change+Robotics",
+          "climate change+Digital",
+          "climate change+Blockchain",
+          "climate change+Augmented Reality",
+          "climate change+Virtual Reality",
+          "climate change+Cybersecurity",
+          "climate change+Cloud",
+          "climate change+Virtual Twin",
+          "climate change+Digital Initiative",
+          "Corporate Social Responsibility+Artificial Intelligence",
+          "Corporate Social Responsibility+Machine Learning",
+          "Corporate Social Responsibility+Robot",
+          "Corporate Social Responsibility+Robotics",
+          "Corporate Social Responsibility+Digital",
+          "Corporate Social Responsibility+Blockchain",
+          "Corporate Social Responsibility+Augmented Reality",
+          "Corporate Social Responsibility+Virtual Reality",
+          "Corporate Social Responsibility+Cybersecurity",
+          "Corporate Social Responsibility+Cloud",
+          "Corporate Social Responsibility+Virtual Twin",
+          "Corporate Social Responsibility+Digital Initiative",
+          "ESG+Artificial Intelligence",
+          "ESG+Machine Learning",
+          "ESG+Robot",
+          "ESG+Robotics",
+          "ESG+Digital",
+          "ESG+Blockchain",
+          "ESG+Augmented Reality",
+          "ESG+Virtual Reality",
+          "ESG+Cybersecurity",
+          "ESG+Cloud",
+          "ESG+Virtual Twin",
+          "ESG+Digital Initiative",
+          "Governance, Risk & Compliance+Artificial Intelligence",
+          "Governance, Risk & Compliance+Machine Learning",
+          "Governance, Risk & Compliance+Robot",
+          "Governance, Risk & Compliance+Robotics",
+          "Governance, Risk & Compliance+Digital",
+          "Governance, Risk & Compliance+Blockchain",
+          "Governance, Risk & Compliance+Augmented Reality",
+          "Governance, Risk & Compliance+Virtual Reality",
+          "Governance, Risk & Compliance+Cybersecurity",
+          "Governance, Risk & Compliance+Cloud",
+          "Governance, Risk & Compliance+Virtual Twin",
+          "Governance, Risk & Compliance+Digital Initiative",
+          "Net Zero Carbon Strategies+Artificial Intelligence",
+          "Net Zero Carbon Strategies+Machine Learning",
+          "Net Zero Carbon Strategies+Robot",
+          "Net Zero Carbon Strategies+Robotics",
+          "Net Zero Carbon Strategies+Digital",
+          "Net Zero Carbon Strategies+Blockchain",
+          "Net Zero Carbon Strategies+Augmented Reality",
+          "Net Zero Carbon Strategies+Virtual Reality",
+          "Net Zero Carbon Strategies+Cybersecurity",
+          "Net Zero Carbon Strategies+Cloud",
+          "Net Zero Carbon Strategies+Virtual Twin",
+          "Net Zero Carbon Strategies+Digital Initiative",
+          "Sustainability+Artificial Intelligence",
+          "Sustainability+Machine Learning",
+          "Sustainability+Robot",
+          "Sustainability+Robotics",
+          "Sustainability+Digital",
+          "Sustainability+Blockchain",
+          "Sustainability+Augmented Reality",
+          "Sustainability+Virtual Reality",
+          "Sustainability+Cybersecurity",
+          "Sustainability+Cloud",
+          "Sustainability+Virtual Twin",
+          "Sustainability+Digital Initiative"
+            // Add more words here
+          ];
+    
+          var startDate = new Date(document.getElementById("start-date").value);
+          var endDate = new Date(document.getElementById("end-date").value);
+    
+          var dateRange = "&tbs=cdr:1,cd_min:" + formatDate(startDate) + ",cd_max:" + formatDate(endDate);
+    
+          for (var i = 0; i < words.length; i++) {
+            var combinedName = name + " + " + words[i];
+            var resultIndex = Math.floor(i / 4);
+            if (i % 4 === 0) {
+              result += "<div class='search-row'>";
+            }
+            result += "<div class='search-result'><a href='https://www.google.com/search?q=" + encodeURIComponent(combinedName) + dateRange + "' target='_blank'>" + combinedName + "</a><div class='keywords'>" + words[i] + "</div></div>";
+            if (i % 4 === 3 || i === words.length - 1) {
+              result += "</div>";
+            }
+          }
+    
+          document.getElementById("result").innerHTML = result;
+        }
+    
+        function clearInput() {
+          document.getElementById("name").value = "";
+          document.getElementById("start-date").value = "";
+          document.getElementById("end-date").value = "";
+          document.getElementById("result").innerHTML = "";
+        }
+    
+        function padNumber(num) {
+          if (num < 10) {
+            return "0" + num;
+          } else {
+            return num;
+          }
+        }
+      </script>
+  <footer>
+    <div class="footer-bottom flex">
+      <a href="/index.html" class="logo-link"><img src="/img/draup-logo.svg" alt="Draup" width="160" height="43"/></a>
+      <p class="design-credit">Design By: <a href="mailto:n-balaji.m@draup.com">n-balaji.m@draup.com & n-sarma.m@draup.com </a></p>
+      <p class="copyright">Powered By Draup Tools. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

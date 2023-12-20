@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Column To Semicolon Tool</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsify-sidebarfooter/5.0.6/docsify-sidebar.min.js">
+  <script src="script.js"></script>
+  <link rel="shortcut icon" href="/img/favicon-96.png">
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+    h2 {
+      text-align: center;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      resize: vertical;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: white;
+      white-space: pre-wrap;
+    }
+    input[type="text"] {
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 300px;
+    }
+    .footer-sticker {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+    /*Google Ads Code Right and Left sidebar*/
+  .google-ads-bar {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .google-ads {
+    margin-bottom: 20px;
+  }
+  .google-ads img {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    margin-left: 200px; /* Adjust this value to avoid overlapping with the left ads */
+    margin-right: 200px; /* Adjust this value to avoid overlapping with the right ads */
+    padding: 20px;
+  }
+  .google-ads-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .google-ads-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  </style>
+  <script>
+    // JavaScript functions here
+    function convertColumn() {
+      var input = document.getElementById("inputText").value;
+      var lines = input.split("\n");
+      var result = lines.join("; ");
+      document.getElementById("outputText").textContent = result;
+    }
+    function copyText() {
+      var output = document.getElementById("outputText");
+      var range = document.createRange();
+      range.selectNode(output);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+      alert("Copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <div class="nav-menu">
+    <a href="/index.html" class="logo-link"><img src="/img/draup-logo.svg" alt="Logo" class="nav-logo">Tools</a>
+  </div>
+  <div class="google-ads-left">
+    <div class="google-ads">
+      <!-- Google Ads content (left) here -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517786470194208"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads scroll -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3517786470194208"
+     data-ad-slot="4299917365"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+  </div>
+  <div class="google-ads-right">
+    <div class="google-ads">
+      <!-- Google Ads content (right) here -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517786470194208"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads scroll -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3517786470194208"
+     data-ad-slot="4299917365"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Column to Semicolon Separated List</h2>
+    <textarea id="inputText" placeholder="Enter column values, each on a new line"></textarea>
+    <button onclick="convertColumn()">Convert</button>
+    <button onclick="copyText()">Copy Text</button>
+    <div class="output" id="outputText"></div>
+  </div>
+   <footer>
+    <div class="footer-bottom flex">
+      <a href="/index.html" class="logo-link"><img src="/img/draup-logo.svg" alt="Draup" width="160" height="43"/></a>
+      <p class="design-credit">Design By: <a href="mailto:n-balaji.m@draup.com">n-balaji.m@draup.com</a></p>
+      <p class="copyright">Powered By Draup Tools. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

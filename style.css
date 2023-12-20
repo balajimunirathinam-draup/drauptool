@@ -1,0 +1,116 @@
+/* Your existing styles here */
+
+/* Additional styles for the new feature */
+.nav-menu {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .nav-logo {
+    width: 100px; /* Set the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some space between logo and title */
+  }
+  
+  .container {
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+    margin:auto;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  .button-primary {
+    background-color: rgb(34, 180, 224);
+    color: white;
+    border: 25;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .footer-bottom a {
+    text-decoration:none;
+    color: white;
+  }
+  
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .design-credit {
+    margin-top: 10px;
+  }
+  
+  /*Google Ads Code Right and Left sidebar*/
+  .google-ads-bar {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .google-ads {
+    margin-bottom: 20px;
+  }
+  .google-ads img {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    margin-left: 200px; /* Adjust this value to avoid overlapping with the left ads */
+    margin-right: 200px; /* Adjust this value to avoid overlapping with the right ads */
+    padding: 20px;
+  }
+  .google-ads-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .google-ads-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+
+  //Loaded page Design //
+
+    .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      animation: spin 2s linear infinite;
+    }
+  
+    .loader img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }

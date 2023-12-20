@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>URL Opener</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/docsify-sidebarfooter/5.0.6/docsify-sidebar.min.js">
+  <link rel="shortcut icon" href="/img/favicon-96.png">
+</head>
+<style>
+  .nav-menu {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+
+  .nav-logo {
+    width: 100px;
+    /* Set the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-right: 10px;
+    /* Add some space between logo and title */
+  }
+
+  .container {
+    max-width: 800px;
+    /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    /* Center horizontally */
+    padding: 20px;
+    margin: auto;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  .button-primary {
+    background-color: rgb(34, 180, 224);
+    color: white;
+    border: 25;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+
+  .footer-bottom a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .design-credit {
+    margin-top: 10px;
+  }
+
+  /*Google Ads Code Right and Left sidebar*/
+  .google-ads-bar {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .google-ads {
+    margin-bottom: 20px;
+  }
+
+  .google-ads img {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 200px;
+    /* Adjust this value to avoid overlapping with the left ads */
+    margin-right: 200px;
+    /* Adjust this value to avoid overlapping with the right ads */
+    padding: 20px;
+  }
+
+  .google-ads-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .google-ads-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  /* Reset some default browser styles */
+  body,
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Set a background color for the body */
+  body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .lead {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .blink_me {
+    animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .btn-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+
+  /* Styling for the footer */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-bottom img {
+    vertical-align: middle;
+  }
+
+  .design-credit {
+    font-size: 14px;
+  }
+
+  /* Add more styles as needed */
+
+  /* Add responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+
+  /*Google Ads Code Right and Left sidebar*/
+  .google-ads-bar {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .google-ads {
+    margin-bottom: 20px;
+  }
+
+  .google-ads img {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 200px;
+    /* Adjust this value to avoid overlapping with the left ads */
+    margin-right: 200px;
+    /* Adjust this value to avoid overlapping with the right ads */
+    padding: 20px;
+  }
+
+  .google-ads-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .google-ads-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
+<script>
+  function openUrls() {
+    var urlsTextarea = document.getElementById('txtUrls');
+    var urls = urlsTextarea.value.split(/\s|,\s?|\n/);
+
+    for (var i = 0; i < urls.length; i++) {
+      if (urls[i].trim() !== '') {
+        // Check if the URL starts with "http://" or "https://"
+        if (!urls[i].match(/^https?:\/\//i)) {
+          // If it doesn't, add "https://"
+          urls[i] = 'https://' + urls[i];
+        }
+        // Open the URL in a new tab or window
+        window.open(urls[i], '_blank');
+      }
+    }
+  }
+
+  // Function to reset the textarea
+  function resetUrls() {
+    var urlsTextarea = document.getElementById('txtUrls');
+    urlsTextarea.value = '';
+  }
+
+  // Add event listeners to the buttons
+  document.addEventListener('DOMContentLoaded', function() {
+    var openUrlsButton = document.getElementById('openUrls');
+    var resetUrlsButton = document.getElementById('resetUrls');
+
+    openUrlsButton.addEventListener('click', openUrls);
+    resetUrlsButton.addEventListener('click', resetUrls);
+  });
+
+  // Add keyboard shortcuts
+  document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'Enter') {
+      openUrls();
+    } else if (event.ctrlKey && event.key === 'r') {
+      resetUrls();
+      event.preventDefault(); // Prevent browser's default Ctrl+R behavior
+    }
+  });
+</script>
+
+
+
+
+<body>
+  <div class="nav-menu">
+    <a href="/index.html" class="logo-link"><img src="/img/draup-logo.svg" alt="Logo" class="nav-logo">Tools</a>
+  </div>
+  <div class="google-ads-left">
+    <div class="google-ads">
+      <!-- Google Ads content (left) here -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517786470194208"
+        crossorigin="anonymous"></script>
+      <!-- Vertical Ads scroll -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3517786470194208" data-ad-slot="4299917365"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <div class="google-ads-right">
+    <div class="google-ads">
+      <!-- Google Ads content (right) here -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517786470194208"
+        crossorigin="anonymous"></script>
+      <!-- Vertical Ads scroll -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3517786470194208" data-ad-slot="4299917365"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <div class="container" id="google_translate_element">
+    <h1 class="title">URL Opener</h1>
+    <p class="lead">
+      Enter URLs, one per <strong>line</strong>, separated by <strong>commas</strong>,
+      or separated by <strong>space</strong> in the below text area.
+      It will open all the given URLs in just a click.
+    </p>
+    <p class="blink_me" id="message"></p>
+    <textarea autofocus class="form-control" cols="5" id="txtUrls" placeholder="Paste/Enter URLs separated by commas, new line, or space." rows="10" spellcheck="false"></textarea>
+    <br>
+    <div class="input-group btn-toolbar">
+      <button class="btn btn-primary" id="openUrls" title="Press Ctrl+Enter as shortcut" type="button">
+                Open all   <small>[Ctrl+Enter]</small>
+            </button>
+      <button class="btn btn-primary" id="resetUrls" title="Press Ctrl+R as shortcut" type="reset">
+                Reset   <small>[Ctrl+R]</small>
+            </button>
+    </div>
+    <br>
+    <p>
+      Please give us your feedback or suggestions to improve this tool.
+      We are happy to help! <a href="mailto:n-balaji.m@draup.com">n-balaji.m@draup.com</a>
+    </p>
+    <footer>
+      <div class="footer-bottom flex">
+        <a href="/index.html" class="logo-link"><img src="/img/draup-logo.svg" alt="Draup" width="160" height="43"/></a>
+        <p class="design-credit">Design By: <a href="mailto:n-balaji.m@draup.com">n-balaji.m@draup.com</a></p>
+        <p class="copyright">Powered By Draup Tools. All Rights Reserved.</p>
+      </div>
+    </footer>
+</body>
+
+</html>
