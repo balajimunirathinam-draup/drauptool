@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Draup Tools</title>
+  <link rel="shortcut icon" href="/img/favicon-96.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/docsify-sidebarfooter/5.0.6/docsify-sidebar.min.js">
-  <script src="script.js"></script>
-  <link rel="shortcut icon" href="/favicon-96.png">
-
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -21,279 +15,70 @@
       margin: 0;
       padding: 0;
     }
-
-    .nav-menu {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    .nav-logo {
-      max-width: 100px;
-      vertical-align: middle;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .search-container {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    #search-input {
-      width: 70%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    #search-button {
-      padding: 0.5rem 1rem;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    #search-button:hover {
-      background-color: #555;
-    }
-
-    #tool-category {
-      width: 70%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background-color: #f9f9f9;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    a {
-      text-decoration: none;
-      color: #333;
-    }
-
-    .tool-info {
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
       display: flex;
+      justify-content: center;
       align-items: center;
+      z-index: 1000;
     }
-
-    .tool-image {
-      max-width: 80px;
-      margin-right: 1rem;
+    .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      animation: spin 2s linear infinite;
     }
-
-    .tool-description {
-      flex: 1;
+    .loader img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .content {
+      opacity: 0;
+      transition: opacity 0.5s;
     }
-
-    .design-credit a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    /* Your existing CSS styles here */
-
-    @media screen and (max-width: 768px) {
-
-      #search-input,
-      #tool-category {
-        width: 100%;
-      }
-    }
+    /* Your existing CSS code here */
   </style>
 </head>
-
 <body>
-  <div class="nav-menu">
-    <a href="/index.html" class="logo-link">
-      <img src="/draup-logo.svg" alt="Logo" class="nav-logo">
-            Tools
-    </a>
+<div class="loader-container">
+  <div class="loader">
+    <img src="/img/favicon-96.png" alt="Loading...">
   </div>
-  <div class="container">
-    <div class="search-container">
-      <div class="filter-header">
-        <label for="tool-category">Filter by Team:</label>
-      </div>
-      <div class="filter-dropdown">
-        <select id="tool-category">
-                    <option value="all">All</option>
-                    <option value="category1">Business Intention</option>
-                    <option value="category2">General</option>
-                    <option value="category3">No data</option>
-                </select>
-      </div>
-      <h2>Draup's Tools</h2>
-      <ul>
-        <li class="category1">
-          <a href="Business intention Tool1.html">
-            <div class="tool-info">
-              <img class="tool-image" src="/favicon-96.png" alt="Tool 1">
-              <div class="tool-description">
-                <h3>Usecase Search Tool</h3>
-                <p>Business Intention</p>
-                <p>The "Usecase Search Tool" is a digital solution for businesses to discover strategic opportunities,
-                  optimize processes, and enhance customer experiences. It offers intention-driven search capabilities,
-                  helping you make informed decisions and drive growth.</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="category1">
-          <a href="Business Intention Tool2.html">
-            <div class="tool-info">
-              <img class="tool-image" src="/favicon-96.png" alt="Tool 2">
-              <div class="tool-description">
-                <h3>Priority Search Tool</h3>
-                <p>Business Intention</p>
-                <p>The "Priority Search Tool" accelerates sustainable and ESG-aligned decisions for our company's future
-                  focus.</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="category2">
-          <a href="/Linkedin.html">
-            <div class="tool-info">
-              <img class="tool-image" src="/Linkedin.png" alt="Tool 3">
-              <div class="tool-description">
-                <h3>Linkedin Tool</h3>
-                <p>General</p>
-                <p>The "LinkedIn Tool" streamlines company profile searches on LinkedIn, offering quick access to
-                  valuable insights and information.</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="category2">
-          <a href="Colums-to-Semi.html">
-            <div class="tool-info">
-              <img class="tool-image" src="/favicon-96.png" alt="Tool 4">
-              <div class="tool-description">
-                <h3>Columns to semi Tool</h3>
-                <p>General</p>
-                <p>The "Columns to Semicolon Tool" converts data from column format to semicolon-separated format for
-                  easier data manipulation and analysis.</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="category2">
-          <a href="URLopen.html">
-            <div class="tool-info">
-              <img class="tool-image" src="/favicon-96.png" alt="Tool 5">
-              <div class="tool-description">
-                <h3>URL Opener</h3>
-                <p>General</p>
-                <p>The "URL Opener" tool facilitates the opening of multiple URLs simultaneously, enhancing browsing
-                  efficiency and convenience.</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="category1">
-          <a href="/Usecase.html">
-            <div class="tool-info">
-              <img class="tool-image" src="/favicon-96.png" alt="Tool 6">
-              <div class="tool-description">
-                <h3>Company Research Tool</h3>
-                <p>Business Intention</p>
-                <p>The "Company Research Tool" empowers users to conduct comprehensive research on companies, providing
-                  insights into their background, performance, and industry presence.</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="category2">
-          <a href="/RST.html">
-            <div class="tool-info">
-              <img class="tool-image" src="/favicon-96.png" alt="Tool 7">
-              <div class="tool-description">
-                <h3>Research Search Tool</h3>
-                <p>General</p>
-                <p>The "Research Search Tool" enables users to efficiently search and access research materials,
-                  enhancing their information discovery process.</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="category2">
-          <a href="SST.html">
-            <div class="tool-info">
-              <img class="tool-image" src="/favicon-96.png" alt="Tool 8">
-              <div class="tool-description">
-                <h3>Subsidiarie Search Tool</h3>
-                <p>General</p>
-                <p>The "Subsidiarie Search Tool" allows users to quickly search and retrieve information about company
-                  subsidiaries, aiding in understanding corporate structures and relationships.</p>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+</div>
 
-  <script>
-    // JavaScript to handle filtering
-        const toolCategoryDropdown = document.getElementById("tool-category");
-        const filterItems = document.querySelectorAll("li");
+<div class="content">
+  <!-- Your existing HTML content goes here -->
+</div>
 
-        toolCategoryDropdown.addEventListener("change", function () {
-            const selectedCategory = toolCategoryDropdown.value;
-
-            filterItems.forEach((item) => {
-                if (selectedCategory === "all" || item.classList.contains(selectedCategory)) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
-            });
-        });
-  </script>
-  <footer>
-    <div class="footer-bottom flex">
-      <a href="/index.html" class="logo-link"><img src="/draup-logo.svg" alt="Draup" width="160" height="43"/></a>
-      <p class="design-credit">Design By: <a href="mailto:n-balaji.m@draup.com">n-balaji.m@draup.com</a></p>
-      <p class="copyright">Powered By Draup Tools. All Rights Reserved.</p>
-
-    </div>
-  </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const loaderContainer = document.querySelector('.loader-container');
+  const content = document.querySelector('.content');
+  
+  // Simulate loading time
+  setTimeout(() => {
+    loaderContainer.style.opacity = '0';
+    content.style.opacity = '1';
+    setTimeout(() => {
+      loaderContainer.style.display = 'none';
+    }, 500);
+  }, 1000); // Adjust this time according to your needs
+  
+  // Your existing JavaScript code here
+});
+</script>
 </body>
-
 </html>
