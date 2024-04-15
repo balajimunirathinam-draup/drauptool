@@ -57,9 +57,166 @@
   <div class="loader">
     <img src="/favicon-96.png" alt="Loading...">
 
-<div class="content">
-  <!-- Your existing HTML content goes here -->
-</div>
+
+    <div class="nav-menu">
+    <a href="/index.html" class="logo-link">
+      <img src="img/draup-logo.svg" alt="Logo" class="nav-logo">
+            Tools
+    </a>
+  </div>
+  <div class="container">
+    <div class="search-container">
+      <div class="filter-header">
+        <label for="tool-category">Filter by Team:</label>
+      </div>
+      <div class="filter-dropdown">
+        <select id="tool-category">
+                    <option value="all">All</option>
+                    <option value="category1">Business Intention</option>
+                    <option value="category2">General</option>
+                    <option value="category3">No data</option>
+                </select>
+      </div>
+      <h2>Draup's Tools</h2>
+      <ul>
+        <li class="category1">
+          <a href="Business intention Tool1.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 1">
+              <div class="tool-description">
+                <h3>Usecase Search Tool</h3>
+                <p>Business Intention</p>
+                <p>The "Usecase Search Tool" is a digital solution for businesses to discover strategic opportunities,
+                  optimize processes, and enhance customer experiences. It offers intention-driven search capabilities,
+                  helping you make informed decisions and drive growth.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="category1">
+          <a href="Business Intention Tool2.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 2">
+              <div class="tool-description">
+                <h3>Priority Search Tool</h3>
+                <p>Business Intention</p>
+                <p>The "Priority Search Tool" accelerates sustainable and ESG-aligned decisions for our company's future
+                  focus.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="category2">
+          <a href="/Linkedin.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 3">
+              <div class="tool-description">
+                <h3>Linkedin Tool</h3>
+                <p>General</p>
+                <p>The "LinkedIn Tool" streamlines company profile searches on LinkedIn, offering quick access to
+                  valuable insights and information.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="category2">
+          <a href="Colums-to-Semi.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 4">
+              <div class="tool-description">
+                <h3>Columns to semi Tool</h3>
+                <p>General</p>
+                <p>The "Columns to Semicolon Tool" converts data from column format to semicolon-separated format for
+                  easier data manipulation and analysis.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="category2">
+          <a href="URLopen.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 5">
+              <div class="tool-description">
+                <h3>URL Opener</h3>
+                <p>General</p>
+                <p>The "URL Opener" tool facilitates the opening of multiple URLs simultaneously, enhancing browsing
+                  efficiency and convenience.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="category1">
+          <a href="/Usecase.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 6">
+              <div class="tool-description">
+                <h3>Company Research Tool</h3>
+                <p>Business Intention</p>
+                <p>The "Company Research Tool" empowers users to conduct comprehensive research on companies, providing
+                  insights into their background, performance, and industry presence.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="category2">
+          <a href="/RST.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 7">
+              <div class="tool-description">
+                <h3>Research Search Tool</h3>
+                <p>General</p>
+                <p>The "Research Search Tool" enables users to efficiently search and access research materials,
+                  enhancing their information discovery process.</p>
+              </div>
+            </div>
+          </a>
+        </li> <li class="category2">
+          <a href="/Deliverable.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 7">
+              <div class="tool-description">
+                <h3>Deliverable</h3>
+                <p>General</p>
+                <p>The "Research Search Tool" enables users to efficiently search and access research materials,
+                  enhancing their information discovery process.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="category2">
+          <a href="SST.html">
+            <div class="tool-info">
+              <img class="tool-image" src="/img/favicon-96.png" alt="Tool 8">
+              <div class="tool-description">
+                <h3>Subsidiarie Search Tool</h3>
+                <p>General</p>
+                <p>The "Subsidiarie Search Tool" allows users to quickly search and retrieve information about company
+                  subsidiaries, aiding in understanding corporate structures and relationships.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle filtering
+        const toolCategoryDropdown = document.getElementById("tool-category");
+        const filterItems = document.querySelectorAll("li");
+
+        toolCategoryDropdown.addEventListener("change", function () {
+            const selectedCategory = toolCategoryDropdown.value;
+
+            filterItems.forEach((item) => {
+                if (selectedCategory === "all" || item.classList.contains(selectedCategory)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+  </script>
 <div>
 
 
